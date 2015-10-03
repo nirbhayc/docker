@@ -1,0 +1,76 @@
+(1) How to install docker on Ubuntu?
+------------------------------------
+  $ sudo apt-get install docker.io
+  $ source /etc/bash_completion.d/docker.io
+
+(2) How to check docker info?
+-----------------------------
+  $ sudo docker info
+  Containers: 0
+  Images: 0
+  Storage Driver: aufs
+   Root Dir: /var/lib/docker/aufs
+   Dirs: 0
+  Execution Driver: native-0.2
+  Kernel Version: 3.13.0-53-generic
+  WARNING: No swap limit support
+
+(3) How to build an image?
+--------------------------
+  $ sudo docker build -t <image-name>[:<tag>] .
+  (Note : . indicates a Dockerfile exists in the current directory)
+
+(4) How to check installed images?
+----------------------------------
+  $ sudo docker images
+  $ sudo docker images --tree (deprecated)
+
+(5) How to remove an installed image?
+-------------------------------------
+  $ sudo docker rmi <image>
+
+(6) How to run a container?
+---------------------------
+  $ sudo docker run -it ubuntu:14.04 bash
+  $ sudo docker ps
+  CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+  feb81350de0b        ubuntu:14.04        bash                19 seconds ago      Up 18 seconds                           loving_fermat
+  $ sudo docker images
+  REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+  ubuntu              14.04               6d4946999d4f        34 hours ago        188.3 MB
+
+(7) How to list containers?
+---------------------------
+  $ sudo docker ps -a
+
+(8) How to remove a container?
+--------------------------
+  $ sudo docker rm <container>
+
+(9) How to check container logs?
+--------------------------------
+  $ sudo docker logs <container>
+
+(10) How to run command in a new container?
+-------------------------------------------
+  $ sudo run image [command]
+  e.g. $ sudo run -it ubuntu /bin/bash
+    -i, --interactive=false    Keep stdin open even if not attached 
+    --rm=false                 Automatically remove the container when it exits (incompatible with -d)
+    -t, --tty=false            Allocate a pseudo-tty
+
+(11) How to start a container?
+------------------------------
+  $ sudo docker start <container>
+
+(12) How to stop a container?
+-----------------------------
+  $ sudo docker stop <container>
+
+(13) How to attach to a running container?
+------------------------------------------
+  $ sudo docker attach <container>
+
+(14) How to check the logs of a container?
+  $ sodo docker logs <container>
+
